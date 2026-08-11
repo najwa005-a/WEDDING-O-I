@@ -14,6 +14,10 @@
 
 <style>
 
+/* =====================================================
+   GLOBAL
+===================================================== */
+
 *{
     margin:0;
     padding:0;
@@ -35,7 +39,10 @@ a{
     -webkit-tap-highlight-color:transparent;
 }
 
-/* ================= INTRO ================= */
+
+/* =====================================================
+   INTRO
+===================================================== */
 
 .intro{
     position:fixed;
@@ -68,8 +75,10 @@ a{
 .envelope{
     width:min(88vw,420px);
     height:570px;
+
     position:relative;
     cursor:pointer;
+
     animation:envelopeAppear 1.3s ease both;
 }
 
@@ -84,7 +93,6 @@ a{
         opacity:1;
         transform:translateY(0) scale(1);
     }
-
 }
 
 .paper{
@@ -106,7 +114,10 @@ a{
         inset 0 0 60px rgba(173,130,77,.07);
 }
 
-/* ================= FLOWERS ================= */
+
+/* =====================================================
+   FLORAL DECORATION
+===================================================== */
 
 .flower{
     position:absolute;
@@ -150,10 +161,14 @@ a{
     transform:translateX(-50%);
 }
 
-/* ================= ORNAMENT ================= */
+
+/* =====================================================
+   ORNAMENT LINES
+===================================================== */
 
 .ornament{
     position:absolute;
+
     width:1px;
     height:130px;
 
@@ -179,7 +194,10 @@ a{
     transform:rotate(-22deg);
 }
 
-/* ================= INVITATION ================= */
+
+/* =====================================================
+   INTRO CONTENT
+===================================================== */
 
 .invitation{
     position:absolute;
@@ -217,6 +235,7 @@ a{
 
 .intro-date{
     margin-top:24px;
+
     font-family:'Playfair Display',serif;
     font-size:12px;
     letter-spacing:2px;
@@ -230,7 +249,10 @@ a{
     color:#9b784d;
 }
 
-/* ================= SEAL ================= */
+
+/* =====================================================
+   SEAL
+===================================================== */
 
 .seal{
     position:absolute;
@@ -270,6 +292,11 @@ a{
     color:#a3783e;
 }
 
+
+/* =====================================================
+   OPEN TEXT
+===================================================== */
+
 .open-text{
     position:absolute;
     bottom:20px;
@@ -294,10 +321,12 @@ a{
     50%{
         opacity:.4;
     }
-
 }
 
-/* ================= WEBSITE ================= */
+
+/* =====================================================
+   MAIN WEBSITE
+===================================================== */
 
 .website{
     opacity:0;
@@ -312,7 +341,10 @@ a{
     visibility:visible;
 }
 
-/* ================= HERO ================= */
+
+/* =====================================================
+   HERO
+===================================================== */
 
 .hero{
     min-height:100vh;
@@ -339,6 +371,7 @@ a{
 
 .hero::before{
     content:"";
+
     position:absolute;
     inset:18px;
 
@@ -374,11 +407,13 @@ a{
 
     line-height:.9;
     color:#956b35;
+
     margin:25px 0;
 }
 
 .hero-date{
     font-family:'Playfair Display',serif;
+
     font-size:17px;
     letter-spacing:4px;
     color:#7d5c37;
@@ -390,11 +425,15 @@ a{
     letter-spacing:3px;
 }
 
-/* ================= DIVIDER ================= */
+
+/* =====================================================
+   DIVIDER
+===================================================== */
 
 .divider{
     width:90px;
     height:1px;
+
     background:#b89663;
 
     margin:28px auto;
@@ -406,6 +445,7 @@ a{
     content:"✦";
 
     position:absolute;
+
     left:50%;
     top:50%;
 
@@ -413,16 +453,21 @@ a{
         translate(-50%,-50%);
 
     background:#f7eee5;
+
     padding:0 10px;
 
     font-size:13px;
     color:#a37c48;
 }
 
-/* ================= NAV ================= */
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
 
 .nav{
     position:fixed;
+
     z-index:100;
 
     bottom:20px;
@@ -472,7 +517,10 @@ a{
     color:#ad8148;
 }
 
-/* ================= SECTIONS ================= */
+
+/* =====================================================
+   SECTIONS
+===================================================== */
 
 section{
     padding:
@@ -494,22 +542,30 @@ section{
 
 .section-subtitle{
     text-align:center;
+
     margin-top:8px;
 
     font-size:12px;
+
     letter-spacing:3px;
+
     text-transform:uppercase;
 }
 
-/* ================= STORY ================= */
+
+/* =====================================================
+   STORY
+===================================================== */
 
 .story{
     max-width:850px;
+
     margin:auto;
 
     text-align:center;
 
     font-size:20px;
+
     line-height:1.8;
 
     color:#725a3c;
@@ -521,6 +577,7 @@ section{
     font-family:'Amiri',serif;
 
     font-size:31px;
+
     line-height:1.8;
 
     margin:
@@ -531,7 +588,10 @@ section{
     color:#8d6838;
 }
 
-/* ================= DETAILS ================= */
+
+/* =====================================================
+   DETAILS
+===================================================== */
 
 .details{
     background:
@@ -600,8 +660,11 @@ section{
     font-family:'Playfair Display',serif;
 
     font-weight:500;
+
     letter-spacing:2px;
+
     font-size:16px;
+
     color:#7e5c36;
 }
 
@@ -609,11 +672,16 @@ section{
     margin-top:12px;
 
     font-size:17px;
+
     line-height:1.6;
+
     color:#735a3d;
 }
 
-/* ================= MAP ================= */
+
+/* =====================================================
+   MAP BUTTON
+===================================================== */
 
 .map-button{
     display:inline-block;
@@ -633,6 +701,7 @@ section{
     text-decoration:none;
 
     font-size:10px;
+
     letter-spacing:2px;
 
     transition:.35s ease;
@@ -641,14 +710,17 @@ section{
 .map-button:hover{
     background:#9b7542;
     color:white;
-
     transform:translateY(-2px);
 }
 
-/* ================= COUNTDOWN ================= */
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 .countdown{
     display:flex;
+
     justify-content:center;
 
     gap:35px;
@@ -675,61 +747,82 @@ section{
     font-size:10px;
 
     letter-spacing:3px;
+
     text-transform:uppercase;
 
     margin-top:5px;
 }
 
-/* ================= RSVP ================= */
+
+/* =====================================================
+   RSVP
+===================================================== */
 
 .rsvp{
     background:#f8f0e7;
+
     text-align:center;
 }
 
 .rsvp-text{
-    max-width:650px;
+    max-width:700px;
 
     margin:
         25px
-        auto;
+        auto
+        35px;
 
     font-size:19px;
+
     line-height:1.7;
 
     color:#725a3c;
 }
 
-/* ================= RSVP FORM ================= */
+
+/* RSVP FORM */
 
 .rsvp-form{
 
-    max-width:520px;
+    width:min(100%,700px);
 
-    margin:35px auto 0;
+    margin:0 auto;
 
-    display:flex;
-
-    flex-direction:column;
-
-    gap:15px;
+    text-align:left;
 }
 
-.rsvp-form input,
-.rsvp-form select{
+.form-group{
+    margin-bottom:25px;
+}
+
+.form-label{
+    display:block;
+
+    font-size:18px;
+
+    letter-spacing:2px;
+
+    color:#80603d;
+
+    margin-bottom:10px;
+}
+
+.form-input,
+.form-select,
+.form-message{
 
     width:100%;
 
-    padding:16px 18px;
+    padding:17px 20px;
+
+    background:
+        rgba(255,250,244,.65);
 
     border:
         1px solid
-        rgba(161,123,69,.45);
+        rgba(157,116,61,.35);
 
-    background:
-        rgba(255,250,244,.75);
-
-    color:#735a3d;
+    color:#705638;
 
     font-family:'Cormorant Garamond',serif;
 
@@ -737,86 +830,200 @@ section{
 
     outline:none;
 
-    border-radius:0;
-
-    text-align:center;
+    transition:.3s ease;
 }
 
-.rsvp-form input::placeholder{
-    color:#a28a6d;
-}
+.form-input:focus,
+.form-select:focus,
+.form-message:focus{
 
-.rsvp-form input:focus,
-.rsvp-form select:focus{
     border-color:#a17b45;
+
+    box-shadow:
+        0 0 0 2px
+        rgba(161,123,69,.08);
 }
 
-/* BUTTON */
+.form-message{
+    min-height:120px;
+    resize:vertical;
+}
 
-.rsvp-button{
 
-    display:inline-block;
+/* RADIO */
+
+.radio-group{
+    display:flex;
+
+    flex-direction:column;
+
+    gap:14px;
+}
+
+.radio-option{
+
+    position:relative;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:14px;
+
+    padding:17px 20px;
+
+    background:
+        rgba(255,250,244,.65);
+
+    border:
+        1px solid
+        rgba(157,116,61,.25);
+
+    cursor:pointer;
+
+    transition:.3s ease;
+}
+
+.radio-option:hover{
+    border-color:#b08a54;
+}
+
+.radio-option input{
+    position:absolute;
+    opacity:0;
+}
+
+.radio-circle{
+
+    width:23px;
+    height:23px;
+
+    border-radius:50%;
+
+    border:
+        1px solid
+        #a98a64;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    flex-shrink:0;
+}
+
+.radio-circle::after{
+
+    content:"";
+
+    width:11px;
+    height:11px;
+
+    border-radius:50%;
+
+    background:#a17b45;
+
+    transform:scale(0);
+
+    transition:.2s ease;
+}
+
+.radio-option input:checked + .radio-circle::after{
+    transform:scale(1);
+}
+
+.radio-text{
+    font-size:18px;
+    color:#725a3c;
+}
+
+
+/* SUBMIT */
+
+.rsvp-submit{
+
+    display:block;
+
+    width:100%;
 
     margin-top:10px;
 
-    padding:
-        16px
-        38px;
+    padding:18px 25px;
+
+    background:transparent;
 
     border:
         1px solid
         #a17b45;
 
-    background:transparent;
-
     color:#8b6739;
-
-    text-decoration:none;
-
-    letter-spacing:2px;
 
     font-family:'Cormorant Garamond',serif;
 
-    font-size:12px;
+    font-size:13px;
+
+    letter-spacing:3px;
 
     cursor:pointer;
 
     transition:.35s ease;
 }
 
-.rsvp-button:hover{
+.rsvp-submit:hover{
     background:#9b7542;
     color:white;
 }
 
-/* ================= THANK YOU ================= */
 
-.thank-you{
+/* SUCCESS MESSAGE */
+
+.success-message{
 
     display:none;
 
-    max-width:600px;
+    max-width:650px;
 
-    margin:35px auto 0;
+    margin:30px auto 0;
 
     padding:35px 25px;
 
     border:
         1px solid
-        rgba(161,123,69,.35);
+        rgba(157,116,61,.3);
 
     background:
-        rgba(255,250,244,.72);
+        rgba(255,250,244,.7);
 
-    animation:
-        thankYouAppear .8s ease;
+    text-align:center;
+
+    animation:successAppear .7s ease;
 }
 
-.thank-you.show{
+.success-message.show{
     display:block;
 }
 
-@keyframes thankYouAppear{
+.success-title{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:48px;
+
+    color:#956d39;
+
+    margin-bottom:12px;
+}
+
+.success-message p{
+
+    font-size:18px;
+
+    line-height:1.7;
+
+    color:#725a3c;
+}
+
+@keyframes successAppear{
 
     from{
         opacity:0;
@@ -827,60 +1034,14 @@ section{
         opacity:1;
         transform:translateY(0);
     }
-
 }
 
-.thank-you-symbol{
-    font-size:35px;
-    color:#a17b45;
-    margin-bottom:10px;
-}
 
-.thank-you h3{
-
-    font-family:'Great Vibes',cursive;
-
-    font-size:45px;
-
-    font-weight:400;
-
-    color:#956d38;
-}
-
-.thank-you p{
-
-    margin-top:10px;
-
-    font-size:18px;
-
-    line-height:1.6;
-
-    color:#725a3c;
-}
-
-/* ================= LOADING ================= */
-
-.loading{
-
-    display:none;
-
-    margin-top:20px;
-
-    font-size:14px;
-
-    letter-spacing:2px;
-
-    color:#9b784d;
-}
-
-.loading.show{
-    display:block;
-}
-
-/* ================= FOOTER ================= */
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer{
-
     padding:
         80px
         20px
@@ -892,7 +1053,6 @@ footer{
 }
 
 .footer-names{
-
     font-family:'Great Vibes',cursive;
 
     font-size:55px;
@@ -901,7 +1061,6 @@ footer{
 }
 
 footer p{
-
     margin-top:15px;
 
     letter-spacing:2px;
@@ -911,7 +1070,10 @@ footer p{
     color:#80603d;
 }
 
-/* ================= MOBILE ================= */
+
+/* =====================================================
+   MOBILE
+===================================================== */
 
 @media(max-width:700px){
 
@@ -949,16 +1111,12 @@ footer p{
 
     .nav{
         width:94%;
-        padding:
-            8px
-            5px;
+        padding:8px 5px;
     }
 
     .nav a{
         font-size:9px;
-        padding:
-            7px
-            5px;
+        padding:7px 5px;
     }
 
     section{
@@ -987,16 +1145,52 @@ footer p{
         font-size:36px;
     }
 
+    .form-label{
+        font-size:17px;
+    }
+
+    .radio-text{
+        font-size:17px;
+    }
+
+}
+
+
+/* =====================================================
+   VERY SMALL MOBILE
+===================================================== */
+
+@media(max-width:400px){
+
+    .hero-names{
+        font-size:65px;
+    }
+
+    .names{
+        font-size:43px;
+    }
+
+    .section-title{
+        font-size:47px;
+    }
+
+    .nav a{
+        font-size:8px;
+    }
+
 }
 
 </style>
+
 </head>
 
 
 <body>
 
 
-<!-- ================= INTRO ================= -->
+<!-- =====================================================
+     INTRO
+===================================================== -->
 
 <div class="intro" id="intro">
 
@@ -1058,7 +1252,10 @@ footer p{
 </div>
 
 
-<!-- ================= WEBSITE ================= -->
+
+<!-- =====================================================
+     MAIN WEBSITE
+===================================================== -->
 
 <div
     class="website"
@@ -1066,7 +1263,9 @@ footer p{
 >
 
 
-<!-- ================= NAV ================= -->
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
 
 <nav class="nav">
 
@@ -1089,7 +1288,10 @@ footer p{
 </nav>
 
 
-<!-- ================= HERO ================= -->
+
+<!-- =====================================================
+     HERO
+===================================================== -->
 
 <section
     class="hero"
@@ -1138,7 +1340,10 @@ footer p{
 </section>
 
 
-<!-- ================= STORY ================= -->
+
+<!-- =====================================================
+     STORY
+===================================================== -->
 
 <section id="histoire">
 
@@ -1174,7 +1379,10 @@ footer p{
 </section>
 
 
-<!-- ================= DETAILS ================= -->
+
+<!-- =====================================================
+     DETAILS
+===================================================== -->
 
 <section
     class="details"
@@ -1190,6 +1398,7 @@ footer p{
     </div>
 
     <div class="cards">
+
 
         <div class="card">
 
@@ -1258,7 +1467,10 @@ footer p{
 </section>
 
 
-<!-- ================= COUNTDOWN ================= -->
+
+<!-- =====================================================
+     COUNTDOWN
+===================================================== -->
 
 <section>
 
@@ -1338,7 +1550,10 @@ footer p{
 </section>
 
 
-<!-- ================= RSVP ================= -->
+
+<!-- =====================================================
+     RSVP
+===================================================== -->
 
 <section
     class="rsvp"
@@ -1366,78 +1581,206 @@ footer p{
     </div>
 
 
-    <!-- FORMULAIRE -->
+    <!-- =================================================
+         RSVP FORM
+    ================================================== -->
 
     <form
         class="rsvp-form"
         id="rsvpForm"
+        action="https://formsubmit.co/ajax/najwa.elalaoui2005@gmail.com"
+        method="POST"
     >
 
+        <!-- FormSubmit settings -->
+
         <input
-            type="text"
-            name="Nom"
-            id="guestName"
-            placeholder="Votre nom et prénom"
-            required
+            type="hidden"
+            name="_subject"
+            value="💍 Nouvelle confirmation — Mariage Omaima & Idriss"
+        >
+
+        <input
+            type="hidden"
+            name="_captcha"
+            value="false"
+        >
+
+        <input
+            type="hidden"
+            name="_template"
+            value="table"
         >
 
 
-        <select
-            name="Nombre de personnes"
-            id="guestNumber"
-            required
-        >
+        <!-- NOM -->
 
-            <option value="">
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="nom"
+            >
+                Nom & Prénom
+            </label>
+
+            <input
+                class="form-input"
+                type="text"
+                id="nom"
+                name="Nom & Prénom"
+                placeholder="Votre nom et prénom"
+                required
+            >
+
+        </div>
+
+
+        <!-- NOMBRE -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="nombre"
+            >
                 Nombre de personnes
-            </option>
+            </label>
 
-            <option value="1 personne">
-                1 personne
-            </option>
+            <select
+                class="form-select"
+                id="nombre"
+                name="Nombre de personnes"
+                required
+            >
 
-            <option value="2 personnes">
-                2 personnes
-            </option>
+                <option value="">
+                    Sélectionnez
+                </option>
 
-            <option value="3 personnes">
-                3 personnes
-            </option>
+                <option value="1 personne">
+                    1 personne
+                </option>
 
-            <option value="4 personnes">
-                4 personnes
-            </option>
+                <option value="2 personnes">
+                    2 personnes
+                </option>
 
-            <option value="5 personnes">
-                5 personnes
-            </option>
+                <option value="3 personnes">
+                    3 personnes
+                </option>
 
-            <option value="6 personnes">
-                6 personnes
-            </option>
+                <option value="4 personnes">
+                    4 personnes
+                </option>
 
-            <option value="7 personnes">
-                7 personnes
-            </option>
+                <option value="5 personnes">
+                    5 personnes
+                </option>
 
-            <option value="8 personnes">
-                8 personnes
-            </option>
+                <option value="6 personnes">
+                    6 personnes
+                </option>
 
-            <option value="9 personnes">
-                9 personnes
-            </option>
+                <option value="7 personnes">
+                    7 personnes
+                </option>
 
-            <option value="10 personnes">
-                10 personnes
-            </option>
+                <option value="8 personnes">
+                    8 personnes
+                </option>
 
-        </select>
+                <option value="9 personnes">
+                    9 personnes
+                </option>
 
+                <option value="10 personnes">
+                    10 personnes
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <!-- REPONSE -->
+
+        <div class="form-group">
+
+            <label class="form-label">
+                Votre réponse
+            </label>
+
+            <div class="radio-group">
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="Réponse"
+                        value="Je serai présent(e)"
+                        required
+                    >
+
+                    <span class="radio-circle"></span>
+
+                    <span class="radio-text">
+                        ♡ Je serai présent(e)
+                    </span>
+
+                </label>
+
+
+                <label class="radio-option">
+
+                    <input
+                        type="radio"
+                        name="Réponse"
+                        value="Je ne pourrai pas être présent(e)"
+                    >
+
+                    <span class="radio-circle"></span>
+
+                    <span class="radio-text">
+                        Je ne pourrai pas être présent(e)
+                    </span>
+
+                </label>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- MESSAGE -->
+
+        <div class="form-group">
+
+            <label
+                class="form-label"
+                for="message"
+            >
+                Message
+            </label>
+
+            <textarea
+                class="form-message"
+                id="message"
+                name="Message"
+                placeholder="Écrivez un petit message pour les mariés..."
+            ></textarea>
+
+        </div>
+
+
+        <!-- SUBMIT -->
 
         <button
             type="submit"
-            class="rsvp-button"
+            class="rsvp-submit"
+            id="submitButton"
         >
             CONFIRMER MA PRÉSENCE
         </button>
@@ -1445,46 +1788,44 @@ footer p{
     </form>
 
 
-    <!-- LOADING -->
+    <!-- =================================================
+         SUCCESS
+    ================================================== -->
 
     <div
-        class="loading"
-        id="loading"
-    >
-        ENVOI DE VOTRE CONFIRMATION…
-    </div>
-
-
-    <!-- MERCI -->
-
-    <div
-        class="thank-you"
-        id="thankYou"
+        class="success-message"
+        id="successMessage"
     >
 
-        <div class="thank-you-symbol">
-            ♡
+        <div class="success-title">
+            Merci ♡
         </div>
 
-        <h3>
-            Merci beaucoup
-        </h3>
-
         <p>
-            Votre confirmation a bien été enregistrée.
+            Votre réponse a bien été enregistrée.
         </p>
 
         <p>
-            Nous sommes très heureux de vous compter
-            parmi nous pour ce merveilleux jour.
+            Omaima & Idriss vous remercient
+            chaleureusement pour votre présence
+            et votre message.
+        </p>
+
+        <p>
+            ✨ Au plaisir de célébrer ce merveilleux
+            moment avec vous ✨
         </p>
 
     </div>
+
 
 </section>
 
 
-<!-- ================= FOOTER ================= -->
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1506,12 +1847,17 @@ footer p{
 </div>
 
 
-<!-- ================= JAVASCRIPT ================= -->
+
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
 
-/* ================= OPEN INVITATION ================= */
+/* =====================================================
+   OPEN INVITATION
+===================================================== */
 
 function openInvitation(){
 
@@ -1537,7 +1883,10 @@ function openInvitation(){
 }
 
 
-/* ================= COUNTDOWN ================= */
+
+/* =====================================================
+   COUNTDOWN
+===================================================== */
 
 const weddingDate =
     new Date(
@@ -1549,7 +1898,6 @@ function updateCountdown(){
 
     const now =
         new Date().getTime();
-
 
     const difference =
         weddingDate - now;
@@ -1636,16 +1984,19 @@ setInterval(
 );
 
 
-/* ================= RSVP ================= */
+
+/* =====================================================
+   RSVP — SEND WITHOUT LEAVING THE WEBSITE
+===================================================== */
 
 const rsvpForm =
     document.getElementById("rsvpForm");
 
-const loading =
-    document.getElementById("loading");
+const successMessage =
+    document.getElementById("successMessage");
 
-const thankYou =
-    document.getElementById("thankYou");
+const submitButton =
+    document.getElementById("submitButton");
 
 
 rsvpForm.addEventListener(
@@ -1655,70 +2006,29 @@ rsvpForm.addEventListener(
         event.preventDefault();
 
 
-        const name =
-            document.getElementById("guestName").value.trim();
+        submitButton.disabled = true;
 
-        const number =
-            document.getElementById("guestNumber").value;
-
-
-        if(!name || !number){
-
-            return;
-        }
-
-
-        loading.classList.add("show");
+        submitButton.innerText =
+            "ENVOI EN COURS...";
 
 
         const formData =
-            new FormData();
-
-
-        formData.append(
-            "Nom",
-            name
-        );
-
-
-        formData.append(
-            "Nombre de personnes",
-            number
-        );
-
-
-        formData.append(
-            "_subject",
-            "Confirmation mariage — Omaima & Idriss"
-        );
-
-
-        formData.append(
-            "_captcha",
-            "false"
-        );
+            new FormData(rsvpForm);
 
 
         try{
 
             const response =
                 await fetch(
-                    "https://formsubmit.co/ajax/najwa.elalaoui2005@gmail.com",
+                    rsvpForm.action,
                     {
                         method:"POST",
-
                         body:formData,
-
                         headers:{
-                            "Accept":
-                            "application/json"
+                            "Accept":"application/json"
                         }
                     }
                 );
-
-
-            const result =
-                await response.json();
 
 
             if(response.ok){
@@ -1726,34 +2036,32 @@ rsvpForm.addEventListener(
                 rsvpForm.style.display =
                     "none";
 
-                loading.classList.remove(
+                successMessage.classList.add(
                     "show"
                 );
 
-                thankYou.classList.add(
-                    "show"
-                );
+                successMessage.scrollIntoView({
+                    behavior:"smooth",
+                    block:"center"
+                });
 
             }else{
 
-                loading.classList.remove(
-                    "show"
-                );
-
-                alert(
-                    "Une erreur est survenue. Merci de réessayer."
+                throw new Error(
+                    "Erreur lors de l'envoi"
                 );
 
             }
 
         }catch(error){
 
-            loading.classList.remove(
-                "show"
-            );
+            submitButton.disabled = false;
+
+            submitButton.innerText =
+                "CONFIRMER MA PRÉSENCE";
 
             alert(
-                "Impossible d'envoyer la confirmation. Vérifiez votre connexion."
+                "Une erreur est survenue. Veuillez réessayer."
             );
 
         }
@@ -1762,7 +2070,10 @@ rsvpForm.addEventListener(
 );
 
 
-/* ================= LOCK SCROLL ================= */
+
+/* =====================================================
+   LOCK SCROLL BEFORE OPENING
+===================================================== */
 
 document.body.style.overflow =
     "hidden";
@@ -1772,7 +2083,3 @@ document.body.style.overflow =
 
 </body>
 </html>
-
-
-
-   

@@ -1,1730 +1,809 @@
 <!DOCTYPE html>
 <html lang="fr">
-
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Omaima & Idriss | Wedding Invitation</title>
+  <title>Omaima & Idriss | Invitation de Mariage</title>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500;1,600&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet"
+  >
 
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
-<style>
+    html {
+      scroll-behavior: smooth;
+    }
 
-/* =====================================================
-   GENERAL
-===================================================== */
+    body {
+      background: #f8f2e9;
+      color: #705d45;
+      font-family: "Montserrat", sans-serif;
+      overflow-x: hidden;
+    }
 
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+    /* =========================
+       HERO
+    ========================= */
 
-html{
-    scroll-behavior:smooth;
-}
-
-body{
-    background:#f6eee5;
-    color:#80603b;
-    font-family:'Cormorant Garamond', serif;
-    overflow-x:hidden;
-}
-
-a{
-    -webkit-tap-highlight-color:transparent;
-}
-
-
-/* =====================================================
-   INTRO SCREEN
-===================================================== */
-
-.intro{
-
-    position:fixed;
-    inset:0;
-
-    z-index:9999;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
-    background:
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 60px 20px;
+      position: relative;
+      background:
         radial-gradient(
-            circle at center,
-            #fffaf5 0%,
-            #f5e8da 55%,
-            #e8d8c5 100%
-        );
-
-    transition:
-        opacity 1.2s ease,
-        visibility 1.2s ease;
-}
-
-.intro.hide{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    pointer-events:none;
-}
-
-
-/* =====================================================
-   INVITATION CARD
-===================================================== */
-
-.envelope{
-
-    width:min(88vw,420px);
-
-    height:570px;
-
-    position:relative;
-
-    cursor:pointer;
-
-    animation:
-        envelopeAppear 1.2s ease both;
-}
-
-@keyframes envelopeAppear{
-
-    from{
-        opacity:0;
-        transform:
-            translateY(35px)
-            scale(.96);
-    }
-
-    to{
-        opacity:1;
-        transform:
-            translateY(0)
-            scale(1);
-    }
-}
-
-
-.paper{
-
-    position:absolute;
-
-    inset:0;
-
-    overflow:hidden;
-
-    background:
-        linear-gradient(
-            145deg,
-            #fffaf5,
-            #f5e8db
-        );
-
-    border:
-        1px solid
-        rgba(160,120,70,.25);
-
-    box-shadow:
-
-        0 30px 80px
-        rgba(78,51,27,.20),
-
-        inset 0 0 60px
-        rgba(174,132,77,.08);
-}
-
-
-/* =====================================================
-   FLORAL ORNAMENTS
-===================================================== */
-
-.flower{
-
-    position:absolute;
-
-    color:#b99664;
-
-    opacity:.38;
-
-    font-size:55px;
-
-    line-height:1;
-}
-
-.flower::before{
-    content:"❦";
-}
-
-.f1{
-
-    top:20px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%)
-        rotate(180deg);
-}
-
-.f2{
-
-    left:20px;
-
-    top:150px;
-
-    transform:
-        rotate(-35deg);
-}
-
-.f3{
-
-    right:20px;
-
-    top:150px;
-
-    transform:
-        rotate(35deg);
-}
-
-.f4{
-
-    bottom:25px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-}
-
-
-/* =====================================================
-   DECORATIVE LINES
-===================================================== */
-
-.ornament{
-
-    position:absolute;
-
-    width:1px;
-
-    height:130px;
-
-    background:
-        linear-gradient(
-            transparent,
-            #b79563,
-            transparent
-        );
-
-    opacity:.4;
-}
-
-.o1{
-
-    left:55px;
-
-    top:175px;
-
-    transform:rotate(22deg);
-}
-
-.o2{
-
-    right:55px;
-
-    top:175px;
-
-    transform:rotate(-22deg);
-}
-
-
-/* =====================================================
-   INVITATION TEXT
-===================================================== */
-
-.invitation{
-
-    position:absolute;
-
-    inset:0;
-
-    padding:
-        145px
-        30px
-        30px;
-
-    text-align:center;
-}
-
-.small-title{
-
-    font-family:'Playfair Display', serif;
-
-    letter-spacing:4px;
-
-    font-size:10px;
-
-    color:#9d7848;
-
-    margin-bottom:15px;
-}
-
-.names{
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:53px;
-
-    line-height:1;
-
-    color:#966c37;
-}
-
-.and{
-
-    font-family:'Playfair Display', serif;
-
-    font-size:20px;
-
-    margin:7px 0;
-
-    color:#ad8651;
-}
-
-.intro-date{
-
-    margin-top:24px;
-
-    font-family:'Playfair Display', serif;
-
-    font-size:12px;
-
-    letter-spacing:2px;
-
-    color:#80603b;
-}
-
-.intro-place{
-
-    margin-top:9px;
-
-    font-size:14px;
-
-    letter-spacing:2px;
-
-    color:#98764c;
-}
-
-
-/* =====================================================
-   SEAL
-===================================================== */
-
-.seal{
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    width:95px;
-    height:95px;
-
-    border-radius:50%;
-
-    background:
-        radial-gradient(
-            circle,
-            #fffaf4 0 53%,
-            #e0ccb2 54% 61%,
-            #fffaf4 62%
-        );
-
-    box-shadow:
-        0 8px 30px
-        rgba(101,70,34,.18);
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    z-index:5;
-}
-
-.seal span{
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:36px;
-
-    color:#9d743c;
-}
-
-
-/* =====================================================
-   OPEN MESSAGE
-===================================================== */
-
-.open-text{
-
-    position:absolute;
-
-    bottom:20px;
-
-    left:0;
-    right:0;
-
-    text-align:center;
-
-    font-size:11px;
-
-    letter-spacing:3px;
-
-    color:#9e8058;
-
-    animation:pulse 2s infinite;
-}
-
-@keyframes pulse{
-
-    0%,100%{
-        opacity:1;
-    }
-
-    50%{
-        opacity:.4;
-    }
-}
-
-
-/* =====================================================
-   WEBSITE
-===================================================== */
-
-.website{
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transition:
-        opacity 1.3s ease;
-}
-
-.website.show{
-
-    opacity:1;
-
-    visibility:visible;
-}
-
-
-/* =====================================================
-   NAVIGATION
-===================================================== */
-
-.nav{
-
-    position:fixed;
-
-    z-index:100;
-
-    bottom:20px;
-
-    left:50%;
-
-    transform:
-        translateX(-50%);
-
-    width:min(92%,650px);
-
-    display:flex;
-
-    justify-content:space-around;
-
-    align-items:center;
-
-    padding:11px 12px;
-
-    background:
-        rgba(255,250,244,.90);
-
-    backdrop-filter:blur(18px);
-
-    -webkit-backdrop-filter:blur(18px);
-
-    border:
-        1px solid
-        rgba(153,113,61,.20);
-
-    border-radius:50px;
-
-    box-shadow:
-        0 12px 35px
-        rgba(84,57,28,.13);
-}
-
-.nav a{
-
-    color:#80603b;
-
-    text-decoration:none;
-
-    font-size:12px;
-
-    letter-spacing:1px;
-
-    padding:8px 12px;
-
-    transition:.3s ease;
-}
-
-.nav a:hover{
-
-    color:#ae8248;
-}
-
-
-/* =====================================================
-   HERO
-===================================================== */
-
-.hero{
-
-    min-height:100vh;
-
-    position:relative;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    text-align:center;
-
-    overflow:hidden;
-
-    background:
-
-        linear-gradient(
-            rgba(247,238,227,.72),
-            rgba(247,238,227,.92)
+          circle at center,
+          rgba(255,255,255,0.45),
+          transparent 65%
         ),
-
-        url("https://images.unsplash.com/photo-1519225421980-715cb0215aed?auto=format&fit=crop&w=1800&q=90")
-
-        center/cover;
-}
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    inset:18px;
-
-    border:
-        1px solid
-        rgba(151,111,60,.30);
-
-    pointer-events:none;
-}
-
-.hero-content{
-
-    position:relative;
-
-    z-index:2;
-
-    padding:30px;
-}
-
-.hero-small{
-
-    letter-spacing:5px;
-
-    font-size:11px;
-
-    text-transform:uppercase;
-
-    color:#856440;
-}
-
-.hero-names{
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:
-        clamp(
-            70px,
-            15vw,
-            125px
-        );
-
-    line-height:.9;
-
-    color:#956b35;
-
-    margin:25px 0;
-}
-
-.hero-date{
-
-    font-family:'Playfair Display', serif;
-
-    font-size:17px;
-
-    letter-spacing:4px;
-
-    color:#795a38;
-}
-
-.hero-place{
-
-    margin-top:13px;
-
-    font-size:17px;
-
-    letter-spacing:3px;
-}
-
-
-/* =====================================================
-   DIVIDER
-===================================================== */
-
-.divider{
-
-    width:90px;
-
-    height:1px;
-
-    background:#b69461;
-
-    margin:28px auto;
-
-    position:relative;
-}
-
-.divider::after{
-
-    content:"✦";
-
-    position:absolute;
-
-    left:50%;
-    top:50%;
-
-    transform:
-        translate(-50%,-50%);
-
-    background:#f7eee5;
-
-    padding:0 10px;
-
-    font-size:13px;
-
-    color:#9d7847;
-}
-
-
-/* =====================================================
-   SECTIONS
-===================================================== */
-
-section{
-
-    padding:
-        100px
-        20px;
-
-    position:relative;
-}
-
-.section-title{
-
-    text-align:center;
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:58px;
-
-    color:#956d39;
-}
-
-.section-subtitle{
-
-    text-align:center;
-
-    margin-top:8px;
-
-    font-size:12px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-}
-
-
-/* =====================================================
-   STORY
-===================================================== */
-
-.story{
-
-    max-width:850px;
-
-    margin:auto;
-
-    text-align:center;
-
-    font-size:20px;
-
-    line-height:1.8;
-
-    color:#70583b;
-}
-
-.arabic{
-
-    direction:rtl;
-
-    font-family:'Amiri', serif;
-
-    font-size:31px;
-
-    line-height:1.8;
-
-    margin:
-        30px
-        0
-        22px;
-
-    color:#8b6638;
-}
-
-
-/* =====================================================
-   DETAILS
-===================================================== */
-
-.details{
-
-    background:
-        linear-gradient(
-            135deg,
-            #eee0cf,
-            #f5e9dd
-        );
-}
-
-.cards{
-
-    max-width:1000px;
-
-    margin:
-        55px
-        auto
-        0;
-
-    display:grid;
-
-    grid-template-columns:
-        repeat(3,1fr);
-
-    gap:25px;
-}
-
-.card{
-
-    background:
-        rgba(255,250,244,.75);
-
-    border:
-        1px solid
-        rgba(157,116,61,.20);
-
-    padding:
-        40px
-        20px;
-
-    text-align:center;
-
-    box-shadow:
-        0 15px 40px
-        rgba(103,74,39,.08);
-
-    transition:.4s ease;
-}
-
-.card:hover{
-
-    transform:
-        translateY(-5px);
-
-    box-shadow:
-        0 20px 45px
-        rgba(103,74,39,.13);
-}
-
-.card-icon{
-
-    font-size:30px;
-
-    color:#a27b44;
-
-    margin-bottom:15px;
-}
-
-.card h3{
-
-    font-family:'Playfair Display', serif;
-
-    font-weight:500;
-
-    letter-spacing:2px;
-
-    font-size:16px;
-
-    color:#7e5c36;
-}
-
-.card p{
-
-    margin-top:12px;
-
-    font-size:17px;
-
-    line-height:1.6;
-
-    color:#735a3d;
-}
-
-
-/* =====================================================
-   MAP BUTTON
-===================================================== */
-
-.map-button{
-
-    display:inline-block;
-
-    margin-top:20px;
-
-    padding:
-        12px
-        22px;
-
-    border:
-        1px solid
-        #a17b45;
-
-    color:#8b6739;
-
-    text-decoration:none;
-
-    font-size:10px;
-
-    letter-spacing:2px;
-
-    transition:.35s ease;
-}
-
-.map-button:hover{
-
-    background:#9b7542;
-
-    color:white;
-
-    transform:
-        translateY(-2px);
-}
-
-
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-.countdown{
-
-    display:flex;
-
-    justify-content:center;
-
-    gap:35px;
-
-    margin-top:55px;
-
-    flex-wrap:wrap;
-}
-
-.time-box{
-
-    min-width:100px;
-
-    text-align:center;
-}
-
-.time-number{
-
-    font-family:'Playfair Display', serif;
-
-    font-size:44px;
-
-    color:#956d38;
-}
-
-.time-label{
-
-    font-size:10px;
-
-    letter-spacing:3px;
-
-    text-transform:uppercase;
-
-    margin-top:5px;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer{
-
-    padding:
-        80px
-        20px
-        130px;
-
-    text-align:center;
-
-    background:#eadbc9;
-}
-
-.footer-names{
-
-    font-family:'Great Vibes', cursive;
-
-    font-size:55px;
-
-    color:#956d38;
-}
-
-footer p{
-
-    margin-top:15px;
-
-    letter-spacing:2px;
-
-    font-size:12px;
-
-    color:#80603d;
-}
-
-
-/* =====================================================
-   MOBILE
-===================================================== */
-
-@media(max-width:700px){
-
-    .envelope{
-
-        width:88vw;
-
-        height:560px;
+        #f8f2e9;
     }
 
-    .invitation{
-
-        padding-top:145px;
+    .hero-content {
+      max-width: 1000px;
+      width: 100%;
     }
 
-    .names{
-
-        font-size:47px;
+    .small-title {
+      font-size: 14px;
+      letter-spacing: 8px;
+      text-transform: uppercase;
+      color: #a27a43;
+      margin-bottom: 35px;
+      font-weight: 400;
     }
 
-    .cards{
-
-        grid-template-columns:1fr;
-
-        max-width:450px;
+    .names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(70px, 12vw, 150px);
+      line-height: 0.9;
+      font-weight: 500;
+      font-style: italic;
+      color: #9b743f;
     }
 
-    .hero-names{
-
-        font-size:75px;
+    .ampersand {
+      display: block;
+      font-size: 70px;
+      margin: 25px 0;
+      font-style: normal;
+      font-weight: 400;
+      color: #b08a52;
     }
 
-    .hero-date{
-
-        font-size:14px;
-
-        letter-spacing:2px;
+    .gold-divider {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 25px;
+      margin: 55px 0;
     }
 
-    .hero-place{
-
-        font-size:14px;
-
-        letter-spacing:2px;
+    .gold-divider span {
+      width: 90px;
+      height: 1px;
+      background: #b08a52;
     }
 
-    .nav{
-
-        width:94%;
-
-        padding:
-            8px 5px;
+    .gold-divider i {
+      color: #b08a52;
+      font-size: 20px;
+      font-style: normal;
     }
 
-    .nav a{
-
-        font-size:9px;
-
-        padding:
-            7px 5px;
+    .invitation-text {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(25px, 4vw, 42px);
+      font-style: italic;
+      line-height: 1.5;
+      color: #705d45;
     }
 
-    section{
+    /* =========================
+       DETAILS
+    ========================= */
 
-        padding:
-            80px 18px;
+    .details {
+      min-height: 80vh;
+      padding: 100px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      background: #f4ecdf;
     }
 
-    .section-title{
-
-        font-size:52px;
+    .details-content {
+      width: 100%;
+      max-width: 1100px;
     }
 
-    .arabic{
-
-        font-size:27px;
+    .section-title {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(60px, 9vw, 110px);
+      font-style: italic;
+      font-weight: 500;
+      color: #9b743f;
+      margin-bottom: 60px;
     }
 
-    .countdown{
-
-        gap:20px;
+    .date {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(40px, 6vw, 70px);
+      color: #705d45;
+      margin-bottom: 20px;
     }
 
-    .time-box{
-
-        min-width:75px;
+    .day {
+      font-size: 17px;
+      letter-spacing: 7px;
+      text-transform: uppercase;
+      color: #a27a43;
+      margin-bottom: 55px;
     }
 
-    .time-number{
-
-        font-size:36px;
+    .info-grid {
+      display: flex;
+      justify-content: center;
+      align-items: stretch;
+      gap: 30px;
+      flex-wrap: wrap;
     }
 
-}
-
-
-/* =====================================================
-   SMALL PHONES
-===================================================== */
-
-@media(max-width:380px){
-
-    .envelope{
-
-        height:530px;
+    .info-box {
+      width: 280px;
+      padding: 35px 20px;
+      border: 1px solid #b08a52;
+      background: rgba(255,255,255,0.2);
     }
 
-    .names{
-
-        font-size:43px;
+    .info-icon {
+      font-size: 27px;
+      color: #a27a43;
+      margin-bottom: 20px;
     }
 
-    .intro-date{
-
-        font-size:10px;
+    .info-label {
+      text-transform: uppercase;
+      letter-spacing: 4px;
+      font-size: 13px;
+      color: #a27a43;
+      margin-bottom: 12px;
     }
 
-    .intro-place{
-
-        font-size:12px;
+    .info-value {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 29px;
+      color: #705d45;
     }
 
-    .seal{
+    /* =========================
+       VERSE
+    ========================= */
 
-        width:85px;
-        height:85px;
+    .verse {
+      min-height: 70vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 100px 20px;
+      background: #f8f2e9;
     }
 
-    .hero-names{
-
-        font-size:65px;
+    .verse-content {
+      max-width: 1000px;
     }
 
-    .nav a{
-
-        font-size:8px;
+    .arabic {
+      direction: rtl;
+      font-family: serif;
+      font-size: clamp(30px, 5vw, 55px);
+      line-height: 2;
+      color: #9b743f;
+      margin-bottom: 30px;
     }
 
-}
+    .verse-translation {
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(23px, 3vw, 35px);
+      font-style: italic;
+      line-height: 1.7;
+      color: #705d45;
+    }
 
-</style>
+    /* =========================
+       PRESENCE
+    ========================= */
 
+    .presence-section {
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      background: #f8f2e9;
+      padding: 100px 20px;
+    }
+
+    .presence-content {
+      width: 100%;
+      max-width: 1100px;
+    }
+
+    .presence-content h2 {
+      margin: 0;
+      color: #a27a43;
+      font-family: "Cormorant Garamond", serif;
+      font-size: clamp(65px, 10vw, 125px);
+      font-style: italic;
+      font-weight: 500;
+      line-height: 1;
+    }
+
+    .presence-divider {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      margin: 55px 0 65px;
+    }
+
+    .presence-divider span {
+      width: 85px;
+      height: 2px;
+      background: #b08a52;
+    }
+
+    .presence-divider i {
+      color: #b08a52;
+      font-size: 22px;
+      font-style: normal;
+    }
+
+    .presence-text {
+      color: #705d45;
+      font-family: "Montserrat", sans-serif;
+      font-size: clamp(18px, 3vw, 30px);
+      line-height: 2;
+      font-weight: 300;
+      margin-bottom: 60px;
+    }
+
+    /* FORM */
+
+    .confirmation-form {
+      max-width: 600px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+    }
+
+    .confirmation-form input,
+    .confirmation-form select {
+      width: 100%;
+      height: 65px;
+      padding: 0 22px;
+      border: 1px solid #b08a52;
+      background: rgba(255,255,255,0.35);
+      color: #705d45;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      outline: none;
+      border-radius: 0;
+    }
+
+    .confirmation-form input::placeholder {
+      color: #8c795f;
+    }
+
+    .confirmation-form select {
+      cursor: pointer;
+    }
+
+    .confirmation-form input:focus,
+    .confirmation-form select:focus {
+      border-color: #8e6939;
+    }
+
+    .confirmation-form button {
+      width: 100%;
+      height: 75px;
+      border: 2px solid #a9844d;
+      background: transparent;
+      color: #87673e;
+      font-family: "Montserrat", sans-serif;
+      font-size: 16px;
+      letter-spacing: 5px;
+      cursor: pointer;
+      transition: all 0.4s ease;
+      margin-top: 10px;
+    }
+
+    .confirmation-form button:hover {
+      background: #a9844d;
+      color: white;
+    }
+
+    /* SUCCESS */
+
+    .success-message {
+      display: none;
+      max-width: 650px;
+      margin: 0 auto;
+      padding: 60px 30px;
+      border: 1px solid #b08a52;
+    }
+
+    .success-message .heart {
+      font-size: 45px;
+      color: #a27a43;
+      margin-bottom: 25px;
+    }
+
+    .success-message h3 {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 55px;
+      font-style: italic;
+      font-weight: 500;
+      color: #9b743f;
+      margin-bottom: 20px;
+    }
+
+    .success-message p {
+      font-size: 17px;
+      line-height: 1.8;
+      color: #705d45;
+    }
+
+    /* =========================
+       FOOTER
+    ========================= */
+
+    footer {
+      padding: 70px 20px;
+      text-align: center;
+      background: #eee3d3;
+    }
+
+    footer .footer-names {
+      font-family: "Cormorant Garamond", serif;
+      font-size: 50px;
+      font-style: italic;
+      color: #9b743f;
+      margin-bottom: 20px;
+    }
+
+    footer p {
+      font-size: 12px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: #8b765b;
+    }
+
+    /* =========================
+       MOBILE
+    ========================= */
+
+    @media (max-width: 700px) {
+
+      .hero {
+        min-height: 100svh;
+        padding: 50px 20px;
+      }
+
+      .small-title {
+        font-size: 11px;
+        letter-spacing: 5px;
+      }
+
+      .names {
+        font-size: 75px;
+      }
+
+      .ampersand {
+        font-size: 50px;
+        margin: 18px 0;
+      }
+
+      .gold-divider {
+        margin: 40px 0;
+      }
+
+      .gold-divider span {
+        width: 55px;
+      }
+
+      .details,
+      .verse,
+      .presence-section {
+        padding: 80px 20px;
+      }
+
+      .info-box {
+        width: 100%;
+        max-width: 330px;
+      }
+
+      .presence-divider {
+        gap: 15px;
+        margin: 40px 0 45px;
+      }
+
+      .presence-divider span {
+        width: 55px;
+      }
+
+      .presence-text {
+        font-size: 18px;
+        line-height: 1.9;
+      }
+
+      .confirmation-form {
+        width: 92%;
+      }
+
+      .confirmation-form input,
+      .confirmation-form select {
+        height: 58px;
+        font-size: 14px;
+      }
+
+      .confirmation-form button {
+        height: 65px;
+        font-size: 13px;
+        letter-spacing: 3px;
+      }
+
+      .success-message {
+        padding: 45px 20px;
+      }
+
+      .success-message h3 {
+        font-size: 45px;
+      }
+    }
+  </style>
 </head>
-
 
 <body>
 
+  <!-- =========================
+       INTRODUCTION
+  ========================= -->
 
-<!-- =====================================================
-     OPENING INVITATION
-===================================================== -->
+  <section class="hero">
 
-<div
-    class="intro"
-    id="intro"
->
+    <div class="hero-content">
 
-    <div
-        class="envelope"
-        onclick="openInvitation()"
-    >
+      <div class="small-title">
+        Invitation de mariage
+      </div>
 
-        <div class="paper">
+      <div class="names">
+        Omaima
+        <span class="ampersand">&amp;</span>
+        Idriss
+      </div>
 
+      <div class="gold-divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
 
-            <!-- FLOWERS -->
-
-            <div class="flower f1"></div>
-
-            <div class="flower f2"></div>
-
-            <div class="flower f3"></div>
-
-            <div class="flower f4"></div>
-
-
-            <!-- ORNAMENTS -->
-
-            <div class="ornament o1"></div>
-
-            <div class="ornament o2"></div>
-
-
-            <!-- TEXT -->
-
-            <div class="invitation">
-
-                <div class="small-title">
-                    NOTRE MARIAGE
-                </div>
-
-
-                <div class="names">
-                    Omaima
-                </div>
-
-
-                <div class="and">
-                    &
-                </div>
-
-
-                <div class="names">
-                    Idriss
-                </div>
-
-
-                <div class="intro-date">
-                    SAMEDI · 10 OCTOBRE 2026
-                </div>
-
-
-                <div class="intro-place">
-                    DAR MEKHTARA · 18:00
-                </div>
-
-            </div>
-
-
-            <!-- SEAL -->
-
-            <div class="seal">
-
-                <span>
-                    O & I
-                </span>
-
-            </div>
-
-
-            <!-- OPEN -->
-
-            <div class="open-text">
-                TOUCHEZ POUR OUVRIR
-            </div>
-
-        </div>
+      <p class="invitation-text">
+        Ont la joie de vous inviter<br>
+        à célébrer leur mariage.
+      </p>
 
     </div>
 
-</div>
+  </section>
 
 
+  <!-- =========================
+       DATE & LIEU
+  ========================= -->
 
-<!-- =====================================================
-     MAIN WEBSITE
-===================================================== -->
+  <section class="details">
 
-<div
-    class="website"
-    id="website"
->
+    <div class="details-content">
+
+      <h2 class="section-title">
+        Le grand jour
+      </h2>
+
+      <div class="date">
+        10 Octobre 2026
+      </div>
+
+      <div class="day">
+        Samedi
+      </div>
+
+      <div class="info-grid">
+
+        <div class="info-box">
+          <div class="info-icon">✦</div>
+          <div class="info-label">Heure</div>
+          <div class="info-value">
+            18:00
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">♡</div>
+          <div class="info-label">Lieu</div>
+          <div class="info-value">
+            Dar Mekhtara
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
 
 
-    <!-- =================================================
-         NAVIGATION
-    ================================================== -->
+  <!-- =========================
+       VERSET
+  ========================= -->
 
-    <nav class="nav">
+  <section class="verse">
 
-        <a href="#accueil">
-            Accueil
-        </a>
+    <div class="verse-content">
 
-        <a href="#histoire">
-            Notre histoire
-        </a>
+      <div class="arabic">
+        وَجَعَلَ بَيْنَكُم مَّوَدَّةً وَرَحْمَةً
+      </div>
 
-        <a href="#details">
-            Détails
-        </a>
+      <div class="verse-translation">
+        « Et Il a établi entre vous de l'affection et de la miséricorde. »
+      </div>
+
+      <div class="gold-divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
+
+    </div>
+
+  </section>
 
 
-        <!-- DIRECT GOOGLE MAPS -->
+  <!-- =========================
+       CONFIRMATION
+  ========================= -->
 
-        <a
-            href="https://maps.app.goo.gl/gNJ5ED1HyvU8enjd7?g_st=ic"
-            target="_blank"
-            rel="noopener noreferrer"
+  <section class="presence-section" id="confirmation">
+
+    <div class="presence-content">
+
+      <h2>
+        Votre présence
+      </h2>
+
+      <div class="presence-divider">
+        <span></span>
+        <i>✦</i>
+        <span></span>
+      </div>
+
+      <p class="presence-text">
+        Nous serions honorés de vous compter parmi<br>
+        nous pour partager ce merveilleux moment.<br>
+        Merci de confirmer votre présence.
+      </p>
+
+
+      <!-- FORMULAIRE -->
+
+      <form
+        action="https://formsubmit.co/Omaima.elalaoui@gmail.com"
+        method="POST"
+        class="confirmation-form"
+        id="confirmationForm"
+      >
+
+        <!-- Sujet du mail -->
+        <input
+          type="hidden"
+          name="_subject"
+          value="💍 Nouvelle confirmation — Mariage Omaima & Idriss"
         >
-            Le lieu
-        </a>
 
-    </nav>
+        <!-- Format du mail -->
+        <input
+          type="hidden"
+          name="_template"
+          value="table"
+        >
+
+        <!-- Désactive captcha -->
+        <input
+          type="hidden"
+          name="_captcha"
+          value="false"
+        >
+
+        <!-- Page après envoi -->
+        <input
+          type="hidden"
+          name="_next"
+          value="https://najwa005-a.github.io/WEDDING-O-I/"
+        >
+
+        <input
+          type="text"
+          name="Nom"
+          placeholder="Votre nom et prénom"
+          required
+        >
+
+        <input
+          type="number"
+          name="Nombre de personnes"
+          placeholder="Nombre de personnes"
+          min="1"
+          max="10"
+          required
+        >
+
+        <select
+          name="Présence"
+          required
+        >
+          <option value="">
+            Confirmez votre présence
+          </option>
+
+          <option value="Oui, je serai présent(e)">
+            Oui, je serai présent(e) 🤍
+          </option>
+
+          <option value="Non, je ne pourrai pas venir">
+            Non, je ne pourrai pas venir
+          </option>
+        </select>
+
+        <button type="submit">
+          CONFIRMER MA PRÉSENCE
+        </button>
+
+      </form>
 
 
+      <!-- MESSAGE DE SUCCÈS -->
 
-    <!-- =================================================
-         HERO
-    ================================================== -->
+      <div
+        class="success-message"
+        id="successMessage"
+      >
 
-    <section
-        class="hero"
-        id="accueil"
-    >
-
-        <div class="hero-content">
-
-
-            <div class="hero-small">
-                AVEC L'AMOUR DE NOS FAMILLES
-            </div>
-
-
-            <div class="hero-names">
-
-                Omaima
-
-                <br>
-
-
-                <span
-                    style="
-                    font-family:'Playfair Display';
-                    font-size:.35em;
-                    "
-                >
-                    &
-                </span>
-
-
-                <br>
-
-                Idriss
-
-            </div>
-
-
-            <div class="divider"></div>
-
-
-            <div class="hero-date">
-                SAMEDI · 10 OCTOBRE 2026
-            </div>
-
-
-            <div class="hero-place">
-                DAR MEKHTARA · 18:00
-            </div>
-
+        <div class="heart">
+          ♡
         </div>
 
-    </section>
-
-
-
-    <!-- =================================================
-         STORY
-    ================================================== -->
-
-    <section
-        id="histoire"
-    >
-
-        <h2 class="section-title">
-            Une nouvelle histoire
-        </h2>
-
-
-        <div class="divider"></div>
-
-
-        <div class="story">
-
-
-            <p class="arabic">
-                وَجَعَلَ اللهُ بَيْنَكُمَا مَوَدَّةً وَرَحْمَةً
-            </p>
-
-
-            <p>
-                Avec beaucoup de bonheur et d'émotion,
-                nous avons le plaisir de vous inviter
-                à célébrer avec nous le début de notre
-                nouvelle vie à deux.
-            </p>
-
-
-            <br>
-
-
-            <p>
-                Votre présence rendra cette journée
-                encore plus belle et restera pour nous
-                un souvenir précieux.
-            </p>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         DETAILS
-    ================================================== -->
-
-    <section
-        class="details"
-        id="details"
-    >
-
-        <h2 class="section-title">
-            Le grand jour
-        </h2>
-
-
-        <div class="section-subtitle">
-            Nous avons hâte de vous retrouver
-        </div>
-
-
-        <div class="cards">
-
-
-            <!-- DATE -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ♡
-                </div>
-
-                <h3>
-                    DATE
-                </h3>
-
-                <p>
-                    Samedi<br>
-                    10 Octobre 2026
-                </p>
-
-            </div>
-
-
-
-            <!-- TIME -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ◷
-                </div>
-
-                <h3>
-                    HEURE
-                </h3>
-
-                <p>
-                    À partir de<br>
-                    18:00
-                </p>
-
-            </div>
-
-
-
-            <!-- PLACE -->
-
-            <div class="card">
-
-                <div class="card-icon">
-                    ⌖
-                </div>
-
-                <h3>
-                    LE LIEU
-                </h3>
-
-                <p>
-
-                    Dar Mekhtara<br>
-
-                    Meknès
-
-                </p>
-
-
-                <!-- GOOGLE MAPS BUTTON -->
-
-                <a
-                    class="map-button"
-
-                    href="https://maps.app.goo.gl/gNJ5ED1HyvU8enjd7?g_st=ic"
-
-                    target="_blank"
-
-                    rel="noopener noreferrer"
-                >
-                    VOIR L’ITINÉRAIRE
-                </a>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         COUNTDOWN
-    ================================================== -->
-
-    <section>
-
-        <h2 class="section-title">
-            Le compte à rebours
-        </h2>
-
-
-        <div class="divider"></div>
-
-
-        <div class="countdown">
-
-
-            <!-- DAYS -->
-
-            <div class="time-box">
-
-                <div
-                    class="time-number"
-                    id="days"
-                >
-                    00
-                </div>
-
-                <div class="time-label">
-                    Jours
-                </div>
-
-            </div>
-
-
-
-            <!-- HOURS -->
-
-            <div class="time-box">
-
-                <div
-                    class="time-number"
-                    id="hours"
-                >
-                    00
-                </div>
-
-                <div class="time-label">
-                    Heures
-                </div>
-
-            </div>
-
-
-
-            <!-- MINUTES -->
-
-            <div class="time-box">
-
-                <div
-                    class="time-number"
-                    id="minutes"
-                >
-                    00
-                </div>
-
-                <div class="time-label">
-                    Minutes
-                </div>
-
-            </div>
-
-
-
-            <!-- SECONDS -->
-
-            <div class="time-box">
-
-                <div
-                    class="time-number"
-                    id="seconds"
-                >
-                    00
-                </div>
-
-                <div class="time-label">
-                    Secondes
-                </div>
-
-            </div>
-
-
-        </div>
-
-    </section>
-
-
-
-    <!-- =================================================
-         FOOTER
-    ================================================== -->
-
-    <footer>
-
-        <div class="footer-names">
-            Omaima & Idriss
-        </div>
-
+        <h3>
+          Merci 🤍
+        </h3>
 
         <p>
-            10 · 10 · 2026
+          Votre confirmation a bien été enregistrée.<br>
+          Nous avons hâte de partager ce merveilleux
+          moment avec vous.
         </p>
 
+      </div>
 
-        <p>
-            Avec tout notre amour ♡
-        </p>
+    </div>
 
-    </footer>
-
-
-</div>
+  </section>
 
 
+  <!-- =========================
+       FOOTER
+  ========================= -->
 
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
+  <footer>
 
-<script>
+    <div class="footer-names">
+      Omaima &amp; Idriss
+    </div>
 
+    <p>
+      10 · 10 · 2026
+    </p>
 
-/* =====================================================
-   OPEN INVITATION
-===================================================== */
-
-function openInvitation(){
-
-    const intro =
-        document.getElementById("intro");
-
-    const website =
-        document.getElementById("website");
+  </footer>
 
 
-    intro.classList.add("hide");
+  <!-- =========================
+       JAVASCRIPT
+  ========================= -->
 
+  <script>
 
-    setTimeout(function(){
+    const form = document.getElementById("confirmationForm");
+    const successMessage = document.getElementById("successMessage");
 
-        website.classList.add("show");
+    form.addEventListener("submit", async function(event) {
 
-        document.body.style.overflowY =
-            "auto";
+      event.preventDefault();
 
-    },700);
+      const button = form.querySelector("button");
 
-}
+      button.disabled = true;
+      button.innerText = "ENVOI EN COURS...";
 
+      try {
 
+        const formData = new FormData(form);
 
-/* =====================================================
-   COUNTDOWN
-===================================================== */
-
-const weddingDate =
-    new Date(
-        "October 10, 2026 18:00:00"
-    ).getTime();
-
-
-
-function updateCountdown(){
-
-    const now =
-        new Date().getTime();
-
-
-    const difference =
-        weddingDate - now;
-
-
-    if(difference <= 0){
-
-        document.getElementById("days").innerHTML =
-            "00";
-
-        document.getElementById("hours").innerHTML =
-            "00";
-
-        document.getElementById("minutes").innerHTML =
-            "00";
-
-        document.getElementById("seconds").innerHTML =
-            "00";
-
-        return;
-    }
-
-
-    const days =
-        Math.floor(
-            difference /
-            (1000 * 60 * 60 * 24)
+        const response = await fetch(
+          form.action,
+          {
+            method: "POST",
+            body: formData,
+            headers: {
+              "Accept": "application/json"
+            }
+          }
         );
 
+        if (response.ok) {
 
-    const hours =
-        Math.floor(
-            (
-                difference %
-                (1000 * 60 * 60 * 24)
-            )
-            /
-            (1000 * 60 * 60)
+          form.style.display = "none";
+          successMessage.style.display = "block";
+
+          successMessage.scrollIntoView({
+            behavior: "smooth",
+            block: "center"
+          });
+
+        } else {
+
+          button.disabled = false;
+          button.innerText = "CONFIRMER MA PRÉSENCE";
+
+          alert(
+            "Une erreur est survenue. Veuillez réessayer."
+          );
+        }
+
+      } catch (error) {
+
+        button.disabled = false;
+        button.innerText = "CONFIRMER MA PRÉSENCE";
+
+        alert(
+          "Vérifiez votre connexion internet puis réessayez."
         );
 
+      }
 
-    const minutes =
-        Math.floor(
-            (
-                difference %
-                (1000 * 60 * 60)
-            )
-            /
-            (1000 * 60)
-        );
+    });
 
-
-    const seconds =
-        Math.floor(
-            (
-                difference %
-                (1000 * 60)
-            )
-            /
-            1000
-        );
-
-
-    document.getElementById("days").innerHTML =
-        String(days).padStart(2,"0");
-
-
-    document.getElementById("hours").innerHTML =
-        String(hours).padStart(2,"0");
-
-
-    document.getElementById("minutes").innerHTML =
-        String(minutes).padStart(2,"0");
-
-
-    document.getElementById("seconds").innerHTML =
-        String(seconds).padStart(2,"0");
-
-}
-
-
-
-updateCountdown();
-
-
-setInterval(
-    updateCountdown,
-    1000
-);
-
-
-
-/* =====================================================
-   LOCK SCROLL BEFORE OPENING
-===================================================== */
-
-document.body.style.overflow =
-    "hidden";
-
-
-</script>
-
+  </script>
 
 </body>
-
-</html>WEDDING O&I
+</html>

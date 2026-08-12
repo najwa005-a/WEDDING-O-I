@@ -14,10 +14,6 @@
 
 <style>
 
-/* =====================================================
-   GLOBAL
-===================================================== */
-
 *{
     margin:0;
     padding:0;
@@ -779,9 +775,6 @@ section{
     color:#725a3c;
 }
 
-
-/* RSVP FORM */
-
 .rsvp-form{
 
     width:min(100%,700px);
@@ -1214,7 +1207,6 @@ footer p{
                 <div class="small-title">
                     NOTRE MARIAGE
                 </div>
-                
 
                 <div class="names">
                     Omaima
@@ -1578,19 +1570,18 @@ footer p{
     </div>
 
 
-    <!-- =================================================
-         RSVP FORM
-    ================================================== -->
-
     <form
         class="rsvp-form"
         id="rsvpForm"
         action="https://formsubmit.co/ajax/najwa.elalaoui2005@gmail.com"
         method="POST"
     >
-       <input type="hidden" name="_cc" value="omaima.elalaoui@gmail.com">
 
-        <!-- FormSubmit settings -->
+        <input
+            type="hidden"
+            name="_cc"
+            value="omaima.elalaoui@gmail.com"
+        >
 
         <input
             type="hidden"
@@ -1610,8 +1601,6 @@ footer p{
             value="table"
         >
 
-
-        <!-- NOM -->
 
         <div class="form-group">
 
@@ -1634,8 +1623,6 @@ footer p{
         </div>
 
 
-        <!-- NOMBRE -->
-
         <div class="form-group">
 
             <label
@@ -1656,52 +1643,21 @@ footer p{
                     Sélectionnez
                 </option>
 
-                <option value="1 personne">
-                    1 personne
-                </option>
-
-                <option value="2 personnes">
-                    2 personnes
-                </option>
-
-                <option value="3 personnes">
-                    3 personnes
-                </option>
-
-                <option value="4 personnes">
-                    4 personnes
-                </option>
-
-                <option value="5 personnes">
-                    5 personnes
-                </option>
-
-                <option value="6 personnes">
-                    6 personnes
-                </option>
-
-                <option value="7 personnes">
-                    7 personnes
-                </option>
-
-                <option value="8 personnes">
-                    8 personnes
-                </option>
-
-                <option value="9 personnes">
-                    9 personnes
-                </option>
-
-                <option value="10 personnes">
-                    10 personnes
-                </option>
+                <option value="1 personne">1 personne</option>
+                <option value="2 personnes">2 personnes</option>
+                <option value="3 personnes">3 personnes</option>
+                <option value="4 personnes">4 personnes</option>
+                <option value="5 personnes">5 personnes</option>
+                <option value="6 personnes">6 personnes</option>
+                <option value="7 personnes">7 personnes</option>
+                <option value="8 personnes">8 personnes</option>
+                <option value="9 personnes">9 personnes</option>
+                <option value="10 personnes">10 personnes</option>
 
             </select>
 
         </div>
 
-
-        <!-- REPONSE -->
 
         <div class="form-group">
 
@@ -1710,7 +1666,6 @@ footer p{
             </label>
 
             <div class="radio-group">
-
 
                 <label class="radio-option">
 
@@ -1746,13 +1701,10 @@ footer p{
 
                 </label>
 
-
             </div>
 
         </div>
 
-
-        <!-- MESSAGE -->
 
         <div class="form-group">
 
@@ -1773,8 +1725,6 @@ footer p{
         </div>
 
 
-        <!-- SUBMIT -->
-
         <button
             type="submit"
             class="rsvp-submit"
@@ -1785,10 +1735,6 @@ footer p{
 
     </form>
 
-
-    <!-- =================================================
-         SUCCESS
-    ================================================== -->
 
     <div
         class="success-message"
@@ -1854,6 +1800,128 @@ footer p{
 
 
 /* =====================================================
+   MUSIQUE INSTRUMENTALE
+   Créée directement avec Web Audio API
+===================================================== */
+
+let audioContext = null;
+let musicStarted = false;
+let musicTimer = null;
+
+function startWeddingMusic(){
+
+    if(musicStarted){
+        return;
+    }
+
+    musicStarted = true;
+
+    try{
+
+        audioContext =
+            new (
+                window.AudioContext ||
+                window.webkitAudioContext
+            )();
+
+        if(audioContext.state === "suspended"){
+            audioContext.resume();
+        }
+
+        /*
+         * Petite mélodie douce et élégante.
+         * Pas de fichier audio nécessaire.
+         */
+
+        const notes = [
+            261.63,
+            329.63,
+            392.00,
+            329.63,
+            293.66,
+            349.23,
+            440.00,
+            349.23,
+
+            261.63,
+            329.63,
+            392.00,
+            493.88,
+            440.00,
+            392.00,
+            329.63,
+            293.66
+        ];
+
+        let index = 0;
+
+        function playNote(){
+
+            if(!audioContext){
+                return;
+            }
+
+            const oscillator =
+                audioContext.createOscillator();
+
+            const gain =
+                audioContext.createGain();
+
+            oscillator.type = "sine";
+
+            oscillator.frequency.value =
+                notes[index];
+
+            gain.gain.setValueAtTime(
+                0,
+                audioContext.currentTime
+            );
+
+            gain.gain.linearRampToValueAtTime(
+                0.045,
+                audioContext.currentTime + 0.08
+            );
+
+            gain.gain.exponentialRampToValueAtTime(
+                0.001,
+                audioContext.currentTime + 2.2
+            );
+
+            oscillator.connect(gain);
+            gain.connect(audioContext.destination);
+
+            oscillator.start();
+
+            oscillator.stop(
+                audioContext.currentTime + 2.3
+            );
+
+            index =
+                (index + 1) %
+                notes.length;
+        }
+
+        playNote();
+
+        musicTimer =
+            setInterval(
+                playNote,
+                1200
+            );
+
+    }catch(error){
+
+        console.log(
+            "Musique indisponible :",
+            error
+        );
+
+    }
+
+}
+
+
+/* =====================================================
    OPEN INVITATION
 ===================================================== */
 
@@ -1865,9 +1933,12 @@ function openInvitation(){
     const website =
         document.getElementById("website");
 
+    /*
+     * Lancement de la musique au même clic
+     */
+    startWeddingMusic();
 
     intro.classList.add("hide");
-
 
     setTimeout(function(){
 
@@ -1879,7 +1950,6 @@ function openInvitation(){
     },700);
 
 }
-
 
 
 /* =====================================================
@@ -1982,9 +2052,8 @@ setInterval(
 );
 
 
-
 /* =====================================================
-   RSVP — SEND WITHOUT LEAVING THE WEBSITE
+   RSVP
 ===================================================== */
 
 const rsvpForm =
@@ -2003,16 +2072,13 @@ rsvpForm.addEventListener(
 
         event.preventDefault();
 
-
         submitButton.disabled = true;
 
         submitButton.innerText =
             "ENVOI EN COURS...";
 
-
         const formData =
             new FormData(rsvpForm);
-
 
         try{
 
@@ -2066,7 +2132,6 @@ rsvpForm.addEventListener(
 
     }
 );
-
 
 
 /* =====================================================
